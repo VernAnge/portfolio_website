@@ -1,35 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Vernon | Stuurman</title>
-	<link rel="icon" href="/favicon.ico.png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Vernon Stuurman portfolio">
-	<meta name="author" content="Vernon Stuurman">
+	<title>Vernon Stuurman - Webpage</title>
+	<link rel="icon" href="pictures/favicon.ico.png" type="image/png">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f4f4f4;
+		}
+		header {
+			background-color: #333;
+			color: white;
+			padding: 1em 0;
+			text-align: center;
+		}
+		nav {
+			background-color: #444;
+			color: white;
+			text-align: center;
+			padding: 1em 0;
+		}
+		nav a {
+			color: white;
+			text-decoration: none;
+			margin: 0 15px;
+			font-size: 1em;
+		}
+		nav a:hover {
+			text-decoration: underline;
+		}
+		section {
+			margin: 2em auto;
+			max-width: 800px;
+			padding: 1em;
+			background-color: white;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		h1, h2 {
+			color: #333;
+		}
+		.content {
+			padding: 1em;
+		}
+		.social-icons {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 1em;
+		}
+		.social-icons img {
+			width: 32px;
+			height: 32px;
+			margin: 0 10px;
+		}
+		.profile-image {
+			max-width: 20%;
+			height: auto;
+			border-radius: 50%;
+			display: block;
+			margin: 0 auto 1em;
+		}
+		.tech-icons {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 20px;
+		}
+		.tech-icons img {
+			width: 64px;
+			height: 64px;
+		}
+		.skills-icons {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 20px;
+			margin-top: 20px;
+		}
+		.skills-icons div {
+			text-align: center;
+		}
+		.skills-icons img {
+			width: 64px;
+			height: 64px;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+		}
+		label {
+			margin-top: 10px;
+		}
+		input, textarea {
+			margin-top: 5px;
+			padding: 10px;
+			font-size: 1em;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+		textarea {
+			height: 100px;
+		}
+		button {
+			margin-top: 20px;
+			padding: 10px;
+			font-size: 1em;
+			color: white;
+			background-color: #333;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #555;
+		}
+		.name-heading {
+			color: white;
+			margin-bottom: 10px;
+		}
+		.programming-icons div {
+			text-align: center;
+		}
+		.programming-icons img {
+			width: 64px;
+			height: 64px;
+		}
+		footer {
+			background-color: #2b2b2b;
+			color: white;
+			padding: 1em 0;
+			text-align: center;
+		}
+		.footer-section {
+			background-color: #2b2b2b;
+			color: white;
+			text-align: center;
+			padding: 1em 0;
+			margin-top: 2em;
+			position: relative;
+			height: 50px;
+			width: 100%;
+		}
+	</style>
+	<script>
+		function validateForm() {
+			const name = document.getElementById("name").value;
+			const email = document.getElementById("email").value;
+			const message = document.getElementById("message").value;
+
+			if (!name || !email || !message) {
+				alert("Please fill in all required fields.");
+				return false;
+			}
+
+			const subject = "Contact Form Submission";
+			const body = `Name and Surname: ${name}\nContact Number: ${document.getElementById("contact").value}\nEmail address: ${email}\nMessage: ${message}`;
+			window.location.href = `mailto:vernonms97@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+			return false;
+		}
+	</script>
 </head>
 <body>
-	<center>
-	<div class="container page-container center-container">
-		<div class="row">
-			<div class="col-sm-5">
-				<img src="Vernon Stuurman pic 2022.png" class="my-image" width="250">
 
+<header>
+	<h1 class="name-heading">Vernon Stuurman</h1>
+	<img src="pictures/Vernon Stuurman.jpg" alt="Vernon Stuurman" class="profile-image">
+	<div class="social-icons">
+		<a href="https://www.linkedin.com/in/vernon-stuurman-3a424a1a0/" target="_blank">
+			<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Profile" class="linkedin-icon">
+		</a>
+		<a href="https://wa.me/2767836781" target="_blank">
+			<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+		</a>
+	</div>
+</header>
+
+<nav>
+	<a href="#about">About Me</a>
+	<a href="#skills">Skills</a>
+	<a href="#experience">Experience</a>
+	<a href="#education">Education</a>
+	<a href="#technologies">Technologies</a>
+	<a href="#projects">Projects</a>
+	<a href="#contact">Contact Me</a>
+</nav>
+
+<section id="about">
+	<h2>About Me</h2>
+	<div class="content">
+		<p>I am an eager and adaptable Computer Science honours student with a passion for software development, cyber security, and data science. Through diverse internships and university coursework, I have honed my skills in these areas, demonstrating a keen ability to solve complex problems. Bilingual in English and Afrikaans, I excel in both independent projects and collaborative teamwork, embracing challenges with enthusiasm and drive.</p>
+	</div>
+</section>
+
+<section id="skills">
+	<h2>Skills</h2>
+	<div class="content skills-icons">
+		<div>
+			<img src="icons/skills/adaptability.png" alt="Adaptability">
+			<p>Adaptability</p>
+		</div>
+		<div>
+			<img src="icons/skills/communication.png" alt="Strong Communication Skills">
+			<p>Strong Communication Skills</p>
+		</div>
+		<div>
+			<img src="icons/skills/team_player.png" alt="Team Player">
+			<p>Team Player</p>
+		</div>
+		<div>
+			<img src="icons/skills/fast_learner.png" alt="Fast Learner">
+			<p>Fast Learner</p>
+		</div>
+		<div>
+			<img src="icons/skills/creative_thinker.png" alt="Creative Thinker">
+			<p>Creative Thinker</p>
+		</div>
+		<div>
+			<img src="icons/skills/time_management.png" alt="Time Management">
+			<p>Time Management</p>
+		</div>
+		<div>
+			<img src="icons/skills/leadership.png" alt="Leadership Skills">
+			<p>Leadership Skills</p>
+		</div>
+		<div>
+			<img src="icons/skills/analytical_thinking.png" alt="Analytical Thinking">
+			<p>Analytical Thinking</p>
+		</div>
+		<div>
+			<img src="icons/skills/problem_solving.png" alt="Problem-Solving Skills">
+			<p>Problem-Solving Skills</p>
+		</div>
+	</div>
+</section>
+
+<section id="experience">
+	<h2>Experience</h2>
+	<div class="content">
+		<h3>Intern | SpatialEdge</h3>
+		<p>JAN 2023 – FEB 2023</p>
+		<p>During my four-week internship at SpatialEdge, I immersed myself in Agile methodologies, particularly Scrum, gaining valuable insights. My focus was on implementing Large Language Models (LLMs) and exploring Prompt Engineering, utilizing "Langchain" infrastructures. Working collaboratively, we delved into the hardware constraints of operating LLMs locally, successfully setting up and executing this environment to process natural language queries. This experience not only enhanced my technical skills but also underscored the importance of teamwork and strategic problem-solving in achieving project goals effectively.</p>
+		
+		<h3>Quantitative Research Intern | QuantifyYourFuture</h3>
+		<p>JAN 2023 – FEB 2023</p>
+		<p>I attended master classes geared toward empowering graduates for success, covering diverse skills such as big data handling, teamwork, and problem-solving. These sessions emphasized the 4 C’s - Creativity, Communication, Collaboration, and Critical thinking, enriching my professional toolkit.</p>
+		
+		<h3>Intern | VASTech</h3>
+		<p>DEC 2022 – JAN 2023</p>
+		<p>Successfully contributed to a team internship project, improving my proficiency in Balsamiq, Laravel, JavaScript, PHP, CSS, MySQL, virtualization, and network monitoring tools.</p>
+	</div>
+</section>
+
+<section id="education">
+	<h2>Education</h2>
+	<div class="content">
+		<h3>BScHons Computer Science | Stellenbosch University</h3>
+		<p>12/02/2024 – Current</p>
+		<p>Currently a course work demi for a 3rd year computer science module. I am also class representative for Computing and Society one of my modules.</p>
+		
+		<h3>BSc Mathematics | Stellenbosch University</h3>
+		<p>22/03/2021 – 11/12/2023</p>
+		<p>Moshal Scholarship Recipient. Participated in Moshal Urban Mobility and University of Stellenbosch Data Science Hackathons. Obtained an academic award from Moshal in my 2nd and 3rd year. Became a mentor, as part of Moshals mentoring program. Participated in Moshals pay it forward initiatives.</p>
+		
+		<h3>BSc Molecular Biology and Biotechnology | Stellenbosch University</h3>
+		<p>05/02/2016 – 11/12/2019</p>
+		<p>I was election convenor for all major campus and societal elections in 2017. I was course work demi for mathematics. I was a tutor for mathematics in my second year. I was involved in various community activities via the University.</p>
+		
+		<h3>National Senior Certificate | Belhar High School</h3>
+		<p>15/01/2010 – 05/12/2014</p>
+		<p>Obtained the best all-rounder award.</p>
+	</div>
+</section>
+
+<section id="projects">
+	<h2>Projects</h2>
+	<div class="content">
+		<p>To view some of the projects I have worked on, click <a href="https://github.com/VernAnge">here</a>.</p>
+	</div>
+</section>
+
+<section id="technologies">
+	<h2>Technologies and Programming Languages</h2>
+	<div class="programming-icons">
+		<p>My experience in Academia, Internships and Software Development Projects have exposed me to various technologies.</p>
+		<div class="tech-icons">
+			<div>
+				<img src="icons/programming/c_programming.png" alt="C">
+				<p>C</p>
+			</div>
+			<div>
+				<img src="icons/programming/java.png" alt="Java">
+				<p>Java</p>
+			</div>
+			<div>
+				<img src="icons/programming/css_html.png" alt="CSS & HTML">
+				<p>CSS & HTML</p>
+			</div>
+			<div>
+				<img src="icons/programming/java_script.png" alt="JavaScript">
+				<p>JavaScript</p>
+			</div>
+			<div>
+				<img src="icons/programming/nodejs.png" alt="Nodejs">
+				<p>Nodejs</p>
+			</div>
+			<div>
+				<img src="icons/programming/python.png" alt="Python">
+				<p>Python</p>
+			</div>
+			<div>
+				<img src="icons/programming/r.png" alt="R">
+				<p>R</p>
+			</div>
+			<div>
+				<img src="icons/programming/react_native.png" alt="ReactNative">
+				<p>ReactNative</p>
+			</div>
+			<div>
+				<img src="icons/programming/gitlab.png" alt="Gitlab">
+				<p>Gitlab</p>
+			</div>
+			<div>
+				<img src="icons/programming/google_workspace.png" alt="Google Workspace">
+				<p>Google Workspace</p>
+			</div>
+			<div>
+				<img src="icons/programming/huggingface.png" alt="HuggingFace">
+				<p>HuggingFace</p>
+			</div>
+			<div>
+				<img src="icons/programming/github.png" alt="GitHub">
+				<p>GitHub</p>
+			</div>
+			<div>
+				<img src="icons/programming/docker.png" alt="Docker">
+				<p>Docker</p>
+			</div>
+			<div>
+				<img src="icons/programming/office.png" alt="Microsoft Office">
+				<p>Microsoft Office</p>
+			</div>
+			<div>
+				<img src="icons/programming/postgres_db.png" alt="PostgresSQL">
+				<p>PostgresSQL</p>
+			</div>
+			<div>
+				<img src="icons/programming/mysql.png" alt="MySQL">
+				<p>MySQL</p>
+			</div>
+			<div>
+				<img src="icons/programming/streamlit_logo.png" alt="Streamlit">
+				<p>Streamlit</p>
+			</div>
+			<div>
+				<img src="icons/programming/linux.png" alt="Linux">
+				<p>Linux</p>
 			</div>
 		</div>
 	</div>
-	<h2>Vernon Stuurman</h2>
-	<p class="description-text">
-		Hi there my name is Vernon, I am a passionate software developer with a focus on solution driven projects. 
-		My goal is to establish a network/community of like minded developers who will focus on solving real world problems to better society as a whole. 
-		I am a bit of an all rounder with a focus on software solutions, doing a step by step analysis of the problem and then building a tailored solution. 
-		Depending on what software or tools you are currently using I might not even need to build anything and just tweak your operations to meet your needs. 
-		I can create applications in various languages, and I have the necessary project and financial management skills needed to see any project through to completion. 
-		You have taken the initial step and landed on my page, now take the next step and get the solutions you need!</p>
-	</center>
-	<footer>
-		<p>&copy; 2023 Vernon. All rights reserved.</p>
-	</footer>
+</section>
+
+<section id="contact">
+	<h2>Contact Me</h2>
+	<div class="content">
+		<form onsubmit="return validateForm();">
+			<label for="name">Name and Surname:</label>
+			<input type="text" id="name" name="name" required>
+			
+			<label for="contact">Contact Number:</label>
+			<input type="text" id="contact" name="contact">
+			
+			<label for="email">Email address:</label>
+			<input type="email" id="email" name="email" required>
+			
+			<label for="message">Message:</label>
+			<textarea id="message" name="message" required></textarea>
+			
+			<button type="submit">Submit</button>
+		</form>
+	</div>
+</section>
+
+<footer>
+	<section class="footer-section">
+		<p>Copyright © 2024 Vernon Stuurman. All rights reserved</p>
+		<a href="https://www.flaticon.com/free-icons/inspiration" title="inspiration icons">Inspiration icons - Flaticon</a>
+	</section>
+</footer>
+
 </body>
 </html>
